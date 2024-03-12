@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/91c8b6af86.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nino's shop</title>
+    <style>
+        body{
+            background-image: url("image/login.back.png");
+            background-size: cover;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+        }
+        .login{
+            width: 590px;
+            margin-left: 10px;
+            height: 370px;
+            border: 2px solid white;
+            border-radius: 10px;
+            margin-top: 100px;
+            backdrop-filter: blur(20px);
+            position: absolute;
+        }
+        .login .t1{
+            text-align: center;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 27px;
+            margin-top: 10px;
+            color: white;
+        }
+        .login .inp{
+            border-radius: 15px;
+            width: 60%;
+            height: 25px;
+            margin-left: 100px;
+            background-color: transparent;
+            border: 1px solid white;
+        }
+        .login .inp2{
+            margin-top: 15px;
+            border-radius: 15px;
+            width: 60%;
+            height: 25px;
+            margin-left: 100px;
+            background-color: transparent;
+            border: 1px solid white;
+            
+        }
+        .login .inp::placeholder{
+            color: white;
+            padding-left: 10px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            opacity: 0.8;
+        }
+        .login .inp2::placeholder{
+            color: white;
+            padding-left: 10px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .fa-envelope{
+            z-index: 2;
+            color: white;
+            margin-left: -35px;
+            font-size: 15px;
+        }
+        .fa-lock{
+            z-index: 2;
+            color: white;
+            margin-left: -35px;
+            font-size: 15px;
+        }
+        .ch{
+            margin-left: -250px;
+            margin-top: 60px;
+            position: absolute;
+            border: none;
+        }
+        .tt{
+            color: white;
+            font-size: 12px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            position: absolute;
+            margin-top: 14px;
+            margin-left: 100px;
+        }
+        .tt2{
+            color: white;
+            font-size: 12px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            position: absolute;
+            margin-top: 14px;
+            margin-left: 360px;
+        }
+        .login button{
+            margin-left: 100px;
+            margin-top: 70px;
+            width: 61%;
+            height: 30px;
+            border-radius: 20px;
+            border: transparent;
+        }
+        #error{
+            margin-left: 310px;
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            margin-top: 3px;
+            visibility: hidden;
+        }
+        #error2{
+            margin-left: 280px;
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            margin-top: 50px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="login">
+            <p class="t1">Login</p>
+            <p id="error">Incorect email!</p>
+            <p id="error2">Incorect Password!</p>
+            <input class="inp" type="email" placeholder="Email" id="email">
+
+            <i class="fa-solid fa-envelope"></i>
+            <input class="inp2" type="password" placeholder="Password" id="pass">
+            <i class="fa-solid fa-lock"></i>
+            <input type="checkbox" class="ch">
+            <p class="tt">Remember me</p>
+            <p class="tt2">Forget Password?</p>
+            <button onclick="error()">Login</button>
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function myFunction() {
+        var passInput = document.getElementById("pass");
+        passInput.type = passInput.type === "password" ? "text" : "password";
+    }
+
+    function error() {
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+        let error = document.getElementById("error");
+        let error2 = document.getElementById("error2");
+        
+        if (email === "nino99" && pass === "123") {
+            window.location.href = "index.html";
+        } else {
+            error.style.visibility = email !== "nino99" ? "visible" : "hidden";
+            error2.style.visibility = pass !== "123" ? "visible" : "hidden";
+        }
+    }
+</script>
